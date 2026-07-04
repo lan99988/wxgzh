@@ -1,0 +1,46 @@
+# ============================================
+# 公众号工作流全局配置模板
+# 复制到 .aws-article/config.yaml 后按需修改
+# ============================================
+
+# 账号定位
+article_category: 科技
+target_reader: 普通读者
+tone: 专业但不晦涩
+default_author: 我的公众号
+
+# 选题与标题
+title_style: 干货型
+title_max_length: 25
+summary_length: "80-128"
+
+# 写作风格
+writing_style: 口语化
+paragraph_preference: 短段为主
+heading_density: 每节必有小标题
+
+# 图片
+image_source: generated
+cover_aspect: "2.35:1"
+cover_style: 简约
+image_density: 每节一图
+caption_style: 有图注
+
+# 审稿
+review_required:
+  - 敏感词
+  - 错别字
+  - 链接
+  - 原创标注
+
+# 发布
+publish_method: draft
+
+# 写作模型
+writing_model:
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-4o"
+
+# 微信账号
+wechat_accounts: 1
+wechat_1_name: "我的公众号"

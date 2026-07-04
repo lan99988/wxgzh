@@ -1,0 +1,27 @@
+# Sensitive config files
+aws.env
+.baoyu-skills/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Generated images
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Drafts (contains original content)
+drafts/
+
+# Temp
+tmp/
