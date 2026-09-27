@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--term-bg);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--term-gray);
+          font-family:var(--font-mono);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .top { display:flex; justify-content:space-between; align-items:center;
+         font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--term-gray); letter-spacing:.12em; }
+  .title { flex:1; display:flex; flex-direction:column; justify-content:center;
+           font-size:var(--fs-2); line-height:1.15; font-weight:bold; color:var(--term-gray); }
+  .io { display:flex; flex-direction:column; gap:var(--sp-2); font-size:var(--fs-5); line-height:var(--lh-body); }
+  .io .lab { font-size:var(--fs-6); color:var(--term-green); letter-spacing:.16em; }
+  .io .in { color:var(--term-gray); }
+  .io .out { color:var(--term-gray); }
+  .arrow { color:var(--term-green); }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="top"><span>SYSTEM / 026</span><span>AI-WORKFLOW</span></div>
+    <div class="title" data-fit>WHY<br>YOUR AI<br>SUCKS</div>
+    <div class="io" data-fit>
+      <div><span class="lab">INPUT</span><br><span class="in">&gt; vague prompt + no context</span></div>
+      <div class="arrow">↓</div>
+      <div><span class="lab">OUTPUT</span><br><span class="out">&gt; generic answer</span></div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

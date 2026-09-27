@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-display);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .meta { display:flex; justify-content:space-between; align-items:center;
+          font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.08em; }
+  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .title { font-size:var(--fs-1); line-height:var(--lh-title); font-weight:var(--title-weight); letter-spacing:.01em; }
+  .rule { border:none; border-top:2px solid var(--ink); width:38%; margin-top:var(--sp-2); }
+  .sub { font-family:var(--font-en); font-size:var(--fs-5); color:var(--ink-2); letter-spacing:.04em; }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="meta"><span>01 / AI × WORK</span><span>#001</span></div>
+    <div class="body">
+      <div class="title" data-fit>别背 AI 黑话了<br>记住这 10 个词</div>
+      <hr class="rule">
+      <div class="sub">A practical guide to understanding AI</div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-body);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .name { font-family:var(--font-en-num); font-size:var(--fs-5); letter-spacing:.26em; color:var(--ink); font-weight:600; }
+  .items { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .item { display:flex; flex-direction:column; gap:var(--sp-1); }
+  .item .t { display:flex; align-items:baseline; gap:var(--sp-3); }
+  .item .n { font-family:var(--font-en-num); font-size:var(--fs-5); color:var(--accent); }
+  .item .k { font-family:var(--font-display); font-size:var(--fs-2); font-weight:var(--title-weight); }
+  .item .d { font-size:var(--fs-4); color:var(--ink-2); }
+  .rule { border:none; border-top:2px solid var(--ink); width:30%; }
+  .sum { font-size:var(--fs-4); color:var(--ink); margin-top:var(--sp-2); }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="name">THE 4C FRAMEWORK</div>
+    <div class="items" data-fit>
+      <div class="item"><div class="t"><span class="n">01</span><span class="k">Context</span></div><div class="d">告诉它背景</div></div>
+      <div class="item"><div class="t"><span class="n">02</span><span class="k">Constraint</span></div><div class="d">告诉它限制</div></div>
+      <div class="item"><div class="t"><span class="n">03</span><span class="k">Criteria</span></div><div class="d">告诉它标准</div></div>
+      <div class="item"><div class="t"><span class="n">04</span><span class="k">Command</span></div><div class="d">告诉它怎么做</div></div>
+    </div>
+    <div>
+      <hr class="rule">
+      <div class="sum">写 Prompt 先想这 4 件事。</div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

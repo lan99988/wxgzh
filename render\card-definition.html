@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-body);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .head { display:flex; justify-content:space-between; align-items:center; }
+  .no { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); }
+  .en { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.24em; }
+  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .title { font-family:var(--font-display); font-size:var(--fs-1); line-height:1.5; font-weight:var(--title-weight); }
+  .rule { border:none; border-top:2px solid var(--ink); width:30%; }
+  .sum { font-size:var(--fs-4); color:var(--ink); }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="head"><span class="no">01</span><span class="en">CONTEXT</span></div>
+    <div class="body">
+      <div class="title" data-fit>Context 就是<br>让 AI 知道：<br>你现在到底在<br>什么情况下工作。</div>
+      <hr class="rule">
+      <div class="sum">一句话：没有 Context，AI 只能猜。</div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

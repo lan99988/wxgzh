@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--term-bg);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--term-gray);
+          font-family:var(--font-mono);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .lab { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--term-green); letter-spacing:.22em; }
+  .code { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
+          font-size:var(--fs-3); line-height:1.7; }
+  .code .u { color:var(--term-gray); }
+  .code .a { color:var(--term-gray); }
+  .rule { border:none; border-top:2px solid var(--term-green); width:30%; }
+  .note { font-family:var(--font-body); font-size:var(--fs-5); color:var(--term-gray); }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="lab">EXAMPLE</div>
+    <div class="code" data-fit>
+      <div><span class="u">&gt; 帮我总结这份报告，<br>&gt; 重点说结论和风险</span></div>
+      <div><span class="a">&gt; 结论：…<br>&gt; 风险：…（附 3 条依据）</span></div>
+    </div>
+    <div>
+      <hr class="rule">
+      <div class="note" style="margin-top:var(--sp-2)">给 AI 示例，它就不猜。</div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

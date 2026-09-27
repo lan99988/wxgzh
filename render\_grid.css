@@ -1,0 +1,17 @@
+/* _grid.css — 12 列栅格 + 安全边距容器（v2）
+   仅在模板需要列布局时使用；单栏卡片可不用 .grid。 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--sp-3);
+}
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-6  { grid-column: span 6; }
+.col-8  { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+/* 安全边距容器：所有内容不越界 */
+.safe { padding: var(--safe); }

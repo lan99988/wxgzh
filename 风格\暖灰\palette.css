@@ -1,0 +1,12 @@
+/* Public bundle uses a solid-color fallback; optional texture assets are not included. */
+:root {
+  --paper: none;
+  --paper-color: #D8D5CF; /* solid background */
+  --ink: #1A1A1A;
+  --ink-2: #1A1A1A;
+  --accent: #CD6F47;
+  --accent-2: #CD6F47;
+  --bg-dark: #D8D5CF;
+  --term-green: #1A1A1A;
+  --term-gray: #1A1A1A;
+}

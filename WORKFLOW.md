@@ -182,3 +182,8 @@ only_fans_can_comment: 0
 chrome_path: /path/to/your/chrome
 default_publish_method: api
 ```
+
+
+## AI 科普双平台批量工作流
+
+此仓库另外提供公众号与小红书的批次式内容生产流程，覆盖选题、素材归档、双平台改写、模板化配图、排版、总审、发布清单及归档。阅读 [工作流方法论](docs/aike-workflow/methodology.md) 与 [aike-公众号流 Skill](skills/aike/aike-公众号流/SKILL.md)；安装和资源说明见 [README-AIKE.md](README-AIKE.md)。

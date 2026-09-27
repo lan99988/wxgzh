@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-display);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .stmt { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
+          font-size:var(--fs-1); line-height:1.3; font-weight:var(--title-weight); }
+  .foot { display:flex; justify-content:space-between;
+          font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.14em; }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="stmt" data-fit>AI 不会抢走<br>你的工作。<br>会用 AI 的人会。</div>
+    <div class="foot"><span>AI × WORK</span><span>08 / 2026</span></div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>
