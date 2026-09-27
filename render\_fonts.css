@@ -1,0 +1,9 @@
+/* Optional font tokens; local font binaries are not bundled. */
+:root {
+  --font-display: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+  --font-body: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-en: Inter, Arial, sans-serif;
+  --font-en-num: Inter, Arial, sans-serif;
+  --font-mono: "SF Mono", Consolas, monospace;
+  --title-weight: 600;
+}

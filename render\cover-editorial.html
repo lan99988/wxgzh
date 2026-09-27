@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-display);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .issue { align-self:flex-end; text-align:right;
+           font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); line-height:var(--lh-cap); letter-spacing:.12em; }
+  .title { flex:1; display:flex; flex-direction:column; justify-content:center;
+           font-size:var(--fs-2); line-height:1.1; font-weight:var(--title-weight); letter-spacing:.01em; }
+  .foot { font-family:var(--font-en); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.14em; }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="issue">THE AI ISSUE<br>08 / 2026</div>
+    <div class="title" data-fit>AI 正在<br>接管<br>一部分<br>工作</div>
+    <div class="foot">OPINION · TREND · 2026</div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

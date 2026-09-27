@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-body);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .before { display:flex; flex-direction:column; gap:var(--sp-1); }
+  .before .lab { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.22em; }
+  .before .txt { font-size:var(--fs-3); color:var(--ink-2); line-height:1.5; }
+  .arrow { font-family:var(--font-mono); font-size:var(--fs-2); color:var(--accent); margin:var(--sp-2) 0; }
+  .after { display:flex; flex-direction:column; gap:var(--sp-1); }
+  .after .lab { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--accent); letter-spacing:.22em; font-weight:600; }
+  .after .txt { font-size:var(--fs-3); color:var(--ink); line-height:1.5; }
+  .rule { border:none; border-top:2px solid var(--ink); width:30%; margin:var(--sp-2) 0; }
+  .sum { font-size:var(--fs-4); color:var(--ink); }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="body">
+      <div class="before" data-fit><span class="lab">BEFORE</span><span class="txt">「帮我写一篇<br>小红书文案。」</span></div>
+      <div class="arrow">↓</div>
+      <div class="after" data-fit><span class="lab">AFTER</span><span class="txt">「面向 25–35 岁<br>AI 从业者，输出<br>3 版口吻各异的文案…」</span></div>
+      <hr class="rule">
+      <div class="sum">同一个 AI，结果完全不同。</div>
+    </div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>

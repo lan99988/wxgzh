@@ -243,3 +243,7 @@ Agent 会自动执行：选题 → 写稿 → 审稿 → 排版 → 配图 → �
 
 - [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) — 宝玉系列 AI Agent Skills
 - [aiworkskills/wechat-article-skills](https://github.com/aiworkskills/wechat-article-skills) — 公众号文章一条龙套件
+
+## AI 科普双平台工作流
+
+仓库还包含一套可复用的公众号与小红书批量内容生产方法论、Skills、模板和脚本。入口见 [AI 科普工作流说明](README-AIKE.md)，详细步骤见 [工作流方法论](docs/aike-workflow/methodology.md)，主控流程见 [aike-公众号流 Skill](skills/aike/aike-公众号流/SKILL.md)。公开版不包含个人账号资料、凭证、批次稿件或素材。

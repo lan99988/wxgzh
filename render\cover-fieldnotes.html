@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .card { width:100%; height:100%;
+          background-color:var(--paper-color,#F5F4ED);
+          background-image:var(--paper);
+          background-position:center; background-size:cover; background-repeat:no-repeat;
+          color:var(--ink);
+          font-family:var(--font-display);
+          display:flex; flex-direction:column; justify-content:space-between;
+          padding:var(--safe); }
+  .num { font-family:var(--font-mono); font-size:var(--fs-6); color:var(--ink); letter-spacing:.12em;
+         border-bottom:2px solid var(--ink); padding-bottom:var(--sp-2); }
+  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
+          font-size:var(--fs-3); line-height:var(--lh-body); }
+  .hl { color:var(--accent-2); }
+  .flow { font-family:var(--font-mono); font-size:var(--fs-4); color:var(--ink); }
+  .flow .t1 { color:var(--ink-2); }
+  .flow .t2 { color:var(--ink); font-weight:bold; }
+  .obs { border:2px solid var(--ink); padding:var(--sp-2) var(--sp-3); width:fit-content;
+         font-family:var(--font-mono); font-size:var(--fs-6); color:var(--ink); letter-spacing:.14em; }
+</style>
+<link rel="stylesheet" href="_tokens.css">
+<link rel="stylesheet" href="_grid.css">
+<link rel="stylesheet" href="_fonts.css">
+<link rel="stylesheet" href="_platform.css">
+<link rel="stylesheet" href="_palette.css">
+</head>
+<body>
+  <div class="card">
+    <div class="num">FIELD NOTE #024</div>
+    <div class="body" data-fit>
+      <div>AI Agent <span class="hl">不是</span>「更聪明的<br>聊天机器人」，真正的<br>区别是：</div>
+      <div class="flow"><span class="t1">Chatbot</span> → 回答问题<br><span class="t2">Agent</span> → 自己决定下一步</div>
+    </div>
+    <div class="obs">[ OBSERVATION ]</div>
+  </div>
+<script src="_fit.js"></script>
+</body>
+</html>
