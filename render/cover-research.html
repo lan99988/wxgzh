@@ -5,20 +5,28 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--paper-color,#F5F4ED);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
+  .card { position:relative; isolation:isolate; width:100%; height:100%; overflow:hidden;
+          background:var(--paper-color,#F5F4ED);
           color:var(--ink);
           font-family:var(--font-display);
           display:flex; flex-direction:column; justify-content:space-between;
           padding:var(--safe); }
-  .meta { display:flex; justify-content:space-between; align-items:center;
+  .card::before,.card::after { content:""; position:absolute; z-index:-1; right:-76px; top:18%;
+          width:270px; height:270px; border:1px solid var(--accent); border-radius:50%; opacity:.25; }
+  .card::after { right:-24px; top:26%; width:168px; height:168px; border-color:var(--ink-2); border-style:dashed; }
+  .meta { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center;
           font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.08em; }
-  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
-  .title { font-size:var(--fs-1); line-height:var(--lh-title); font-weight:var(--title-weight); letter-spacing:.01em; }
-  .rule { border:none; border-top:2px solid var(--ink); width:38%; margin-top:var(--sp-2); }
-  .sub { font-family:var(--font-en); font-size:var(--fs-5); color:var(--ink-2); letter-spacing:.04em; }
+  .body { position:relative; z-index:1; flex:1; min-height:0; max-width:78%; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .title { font-size:var(--fs-1); line-height:1.15; font-weight:var(--title-weight); letter-spacing:.01em; }
+  .rule { border:none; border-top:2px solid var(--accent); width:26%; margin-top:var(--sp-2); }
+  .sub { font-family:var(--font-en); font-size:var(--fs-5); color:var(--ink-2); letter-spacing:.04em; line-height:1.45; }
+  @media (min-aspect-ratio: 2/1) { .body { max-width:64%; } }
+  @media (max-aspect-ratio: 95/100) {
+    .card { padding:40px; }
+    .body { max-width:100%; }
+    .card::before { right:-125px; top:auto; bottom:8%; width:260px; height:260px; }
+    .card::after { right:-80px; top:auto; bottom:15%; width:160px; height:160px; }
+  }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">

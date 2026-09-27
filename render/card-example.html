@@ -5,21 +5,26 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--term-bg);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
-          color:var(--term-gray);
+  .card { position:relative; width:100%; height:100%; overflow:hidden;
+          --terminal-accent:#AFC5A6; --terminal-muted:#A9B5AE; --terminal-ink:#F0EEE6;
+          background:var(--term-bg);
+          color:var(--terminal-muted);
           font-family:var(--font-mono);
           display:flex; flex-direction:column; justify-content:space-between;
           padding:var(--safe); }
-  .lab { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--term-green); letter-spacing:.22em; }
-  .code { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
-          font-size:var(--fs-3); line-height:1.7; }
-  .code .u { color:var(--term-gray); }
-  .code .a { color:var(--term-gray); }
-  .rule { border:none; border-top:2px solid var(--term-green); width:30%; }
-  .note { font-family:var(--font-body); font-size:var(--fs-5); color:var(--term-gray); }
+  .lab { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--terminal-accent); letter-spacing:.22em; }
+  .code { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-2);
+          font-size:var(--fs-4); line-height:1.5; }
+  .code > div { position:relative; border:1px solid #46544E; padding:var(--sp-2) var(--sp-3);
+                background:#121A17; }
+  .code > div::before { display:block; margin-bottom:var(--sp-1); font-family:var(--font-en-num);
+                        font-size:var(--fs-6); letter-spacing:.14em; color:var(--terminal-accent); }
+  .code > div:first-child::before { content:"INPUT"; }
+  .code > div:last-child::before { content:"OUTPUT"; }
+  .code .u { color:#C7D1CC; }
+  .code .a { color:var(--terminal-ink); }
+  .rule { border:none; border-top:1px solid var(--terminal-accent); width:22%; }
+  .note { font-family:var(--font-body); font-size:var(--fs-5); color:var(--terminal-muted); }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">

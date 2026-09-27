@@ -5,23 +5,24 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--paper-color,#F5F4ED);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
-          color:var(--ink);
-          font-family:var(--font-body);
-          display:flex; flex-direction:column; justify-content:space-between;
-          padding:var(--safe); }
-  .name { font-family:var(--font-en-num); font-size:var(--fs-5); letter-spacing:.26em; color:var(--ink); font-weight:600; }
-  .items { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
-  .item { display:flex; flex-direction:column; gap:var(--sp-1); }
-  .item .t { display:flex; align-items:baseline; gap:var(--sp-3); }
+  .card { position:relative; width:100%; height:100%; overflow:hidden;
+          background:var(--paper-color,#F5F4ED); color:var(--ink); font-family:var(--font-body);
+          display:flex; flex-direction:column; justify-content:space-between; padding:var(--safe); }
+  .name { font-family:var(--font-en-num); font-size:var(--fs-5); letter-spacing:.12em;
+          color:var(--ink-2); font-weight:600; border-bottom:1px solid var(--ink); padding-bottom:var(--sp-2); }
+  .items { position:relative; flex:1; min-height:0; display:flex; flex-direction:column;
+           justify-content:center; gap:var(--sp-2); padding-left:52px; }
+  .items::before { content:""; position:absolute; left:17px; top:12%; bottom:12%; border-left:1px solid var(--accent); }
+  .item { position:relative; display:flex; flex-direction:column; gap:7px;
+          padding:var(--sp-2) var(--sp-3); border-top:1px solid color-mix(in srgb,var(--ink) 24%,transparent); }
+  .item::before { content:""; position:absolute; left:-42px; top:25px; width:13px; height:13px;
+                  border-radius:50%; background:var(--paper-color,#F5F4ED); border:2px solid var(--accent); }
+  .item .t { display:flex; align-items:baseline; gap:var(--sp-2); }
   .item .n { font-family:var(--font-en-num); font-size:var(--fs-5); color:var(--accent); }
-  .item .k { font-family:var(--font-display); font-size:var(--fs-2); font-weight:var(--title-weight); }
-  .item .d { font-size:var(--fs-4); color:var(--ink-2); }
-  .rule { border:none; border-top:2px solid var(--ink); width:30%; }
-  .sum { font-size:var(--fs-4); color:var(--ink); margin-top:var(--sp-2); }
+  .item .k { font-family:var(--font-display); font-size:var(--fs-3); line-height:1.25; font-weight:var(--title-weight); }
+  .item .d { font-size:var(--fs-5); line-height:1.45; color:var(--ink-2); }
+  .rule { border:none; border-top:2px solid var(--ink); width:24%; }
+  .sum { font-size:var(--fs-4); line-height:1.35; color:var(--ink); margin-top:var(--sp-2); }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">

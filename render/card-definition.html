@@ -5,21 +5,23 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--paper-color,#F5F4ED);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
+  .card { position:relative; isolation:isolate; width:100%; height:100%; overflow:hidden;
+          background:var(--paper-color,#F5F4ED);
           color:var(--ink);
           font-family:var(--font-body);
           display:flex; flex-direction:column; justify-content:space-between;
-          padding:var(--safe); }
-  .head { display:flex; justify-content:space-between; align-items:center; }
+          padding:max(36px,calc(var(--safe) - 8px)) var(--safe); }
+  .card::before { content:""; position:absolute; z-index:-1; right:-48px; top:18%; width:210px; height:210px;
+                  border:1px solid var(--accent); border-radius:50%; opacity:.24; }
+  .card::after { content:""; position:absolute; z-index:-1; right:14px; top:24%; width:118px; height:118px;
+                 border:1px dashed var(--ink-2); border-radius:50%; opacity:.28; }
+  .head { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--ink); padding-bottom:var(--sp-2); }
   .no { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); }
   .en { font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.24em; }
-  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
-  .title { font-family:var(--font-display); font-size:var(--fs-1); line-height:1.5; font-weight:var(--title-weight); }
-  .rule { border:none; border-top:2px solid var(--ink); width:30%; }
-  .sum { font-size:var(--fs-4); color:var(--ink); }
+  .body { position:relative; flex:1; min-height:0; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3); }
+  .title { max-width:92%; padding:8px 0; font-family:var(--font-display); font-size:calc(var(--fs-1) * .90); line-height:1.12; font-weight:var(--title-weight); }
+  .rule { border:none; border-top:2px solid var(--accent); width:24%; }
+  .sum { max-width:92%; font-size:var(--fs-4); line-height:1.45; color:var(--ink-2); }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">

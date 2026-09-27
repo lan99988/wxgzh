@@ -1,0 +1,61 @@
+/* cover-research 移植 CSS（来源 render/cover-research.html <style>，逐行保留）
+ *
+ * ══ 花纹安全区 ═══════════════════════════════════════════
+ *  DECOR: 左右人头线稿 (x:0~16%, x:84%~100%)
+ *  SAFE:  中心区 (x:16%~84%) ← .body max-width:66%
+ *  CAUTION: 底部波浪线 (y:88%~100%)
+ * ══════════════════════════════════════════════════════════
+ */
+
+.cover-research .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-en-num);
+  font-size: 1.6vh;
+  color: var(--ink-2);
+  letter-spacing: 0.08em;
+}
+
+.cover-research .body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 文字居中排放（用户约定：research 底图文字统一居中） */
+  text-align: center;
+  gap: 2vh;
+  max-width: 66%; /* 安全区约束：标题不侵入左右人头线稿 */
+  margin: 0 auto; /* 容器自身水平居中（配合 max-width） */
+}
+
+.cover-research .title {
+  font-size: 9.5vh;
+  line-height: 1.22;
+  font-weight: var(--title-weight, 600);
+  letter-spacing: 0.01em;
+  text-align: center; /* 继承 body 居中 */
+}
+
+.cover-research .rule {
+  border: none;
+  border-top: 0.2vh solid var(--ink);
+  width: 38%;
+  margin-top: 1vh;
+}
+
+.cover-research .sub {
+  font-family: var(--font-en);
+  font-size: 1.9vh;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+}
+
+/* 横版 2.35:1：居中 + 放大字号（与原模板 @media 分支一致） */
+@media (min-aspect-ratio: 2/1) {
+  .cover-research .body { align-items: center; text-align: center; }
+  .cover-research .title { font-size: 18vh; text-align: center; } /* ↓ 从21vh降到18vh（原太大挤压留白+侵入花纹区） */
+  .cover-research .rule { margin: 0 auto; }
+  .cover-research .sub { font-size: 4.4vh; }
+  .cover-research .meta { font-size: 3.6vh; }
+}

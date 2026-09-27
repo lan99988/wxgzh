@@ -1,0 +1,53 @@
+.editorial-motif {
+  position: absolute;
+  z-index: 0;
+  top: 19%;
+  right: 7%;
+  width: 25%;
+  height: 62%;
+  color: var(--ink-2);
+  opacity: 0.64;
+  pointer-events: none;
+}
+
+.editorial-motif__lines {
+  stroke: currentColor;
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.editorial-motif__nodes circle {
+  fill: var(--paper-color, #f5f4ed);
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.editorial-motif__accent {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.editorial-motif--framework {
+  right: 5%;
+  width: 26%;
+  transform: rotate(8deg);
+}
+
+.editorial-motif--checklist {
+  opacity: 0.48;
+  transform: rotate(-5deg);
+}
+
+.editorial-motif--flow {
+  color: var(--ink);
+  opacity: 0.48;
+  transform: scaleX(0.92);
+}
+
+.card > :not(.editorial-motif) {
+  position: relative;
+  z-index: 1;
+}

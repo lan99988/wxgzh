@@ -25,3 +25,25 @@ drafts/
 
 # Temp
 tmp/
+
+# Public renderer local/generated assets
+# Generated and machine-local assets
+**/node_modules/
+visual-engine/dist/
+visual-engine/.wb-dist/
+**/.env
+**/.env.*
+**/imgs/
+**/render/_tmp*/
+visual-engine/public/fonts/
+visual-engine/public/papers/
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/*.db-shm
+**/*.db-wal
+批次/
+素材/
+审核/
+结办/
+小红书/

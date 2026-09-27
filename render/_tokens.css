@@ -1,9 +1,8 @@
-/* _tokens.css — 设计令牌 v2（固定 px，弃用 vh/vw）
+/* _tokens.css — 设计令牌 v3（固定 px，弃用 vh/vw）
    加载顺序：_tokens → _grid → _fonts → _platform → _palette
    palette 会覆盖 --paper/--ink/--accent 等主题色；
    终端/代码语义色固定，不随 palette 变化。
-   画布字阶：默认 = 卡片 3:4 (540×720)；@media 2/1 = 封面 21:9 (1050×450)。
-   因此同一封面模板同时适用于 cover.png(21:9) 与 xhs-cover.png(3:4)，自动切换字号。 */
+   画布字阶：卡片 3:4 (621×828)、方形 1:1 (1024×1024)、横版封面 2.35:1 (1024×440)。 */
 :root {
   /* 间距刻度（所有 margin/padding/gap 必须引用） */
   --sp-1: 8px;  --sp-2: 16px; --sp-3: 24px;
@@ -13,23 +12,32 @@
   --lh-title: 1.2; --lh-body: 1.5; --lh-cap: 1.3;
 
   /* 语义色：终端/代码风固定 */
-  --term-green: #39FF14;
-  --term-gray: #8FA8A0;
-  --term-bg:    #0D0D0D;
+  --term-green: #AFC5A6;
+  --term-gray: #A9B5AE;
+  --term-bg:    #1B211E;
 
   /* 安全边距（画布宽 × 7%） */
   --safe: 44px;
 
   /* 默认 = 3:4 卡片画布字阶 */
-  --fs-1: 48px; --fs-2: 40px; --fs-3: 32px;
-  --fs-4: 28px; --fs-5: 24px; --fs-6: 20px;
+  --fs-1: 54px; --fs-2: 44px; --fs-3: 34px;
+  --fs-4: 25px; --fs-5: 20px; --fs-6: 16px;
 }
 
-/* 21:9 横版封面画布：cover.png / shot.sh 轮 1 */
+/* 方形转发封面：cover-1x1.png */
+@media (min-aspect-ratio: 95/100) and (max-aspect-ratio: 199/100) {
+  :root {
+    --safe: 64px;
+    --fs-1: 72px; --fs-2: 56px; --fs-3: 42px;
+    --fs-4: 30px; --fs-5: 24px; --fs-6: 18px;
+  }
+}
+
+/* 横版封面画布：cover.png */
 @media (min-aspect-ratio: 2/1) {
   :root {
     --safe: 64px;
-    --fs-1: 88px; --fs-2: 56px; --fs-3: 40px;
-    --fs-4: 30px; --fs-5: 24px; --fs-6: 20px;
+    --fs-1: 86px; --fs-2: 58px; --fs-3: 38px;
+    --fs-4: 26px; --fs-5: 20px; --fs-6: 16px;
   }
 }
