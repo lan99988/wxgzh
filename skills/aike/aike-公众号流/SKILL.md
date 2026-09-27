@@ -89,6 +89,7 @@ G1 检查每素材：来源可信 ✓ / 与选题相关 ✓ / 可引用（有出
 | `imgs/cover-1x1.png` | 2048×2048（1:1） | 公众号转发封面（朋友圈/群分享卡片） |
 
 - render.json 加 `cover_1x1` 字段（与 `cover` 同模板/同配色，title 用简短钩子版 ≤14 字，io 简化为一行），render_batch.py 自动渲染（SIZES 已含 `"1x1": (1024,1024)`，按项目发布配置造）。
+- React + Playwright 并列入口：在 `visual-engine/` 运行 `npm ci` 与 `npx playwright install chromium`，然后 `npm run render:batch -- --batch <批次目录> [--only NN] [--out-root <临时目录>]`。两套渲染器共用 render.json、图片名与像素规格；需要并排检查时给两者传不同的 `--out-root`。
 - 小红书封面 `xhs_cover`（3:4）继续按需保留。
 - 单篇示例：`_render_1x1.py` 已归档进批次目录，批量走 render.json 的 `cover_1x1` 即可。
 

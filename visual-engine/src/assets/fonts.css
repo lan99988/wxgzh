@@ -1,0 +1,9 @@
+/* 通用系统字体回退；公开包不附带本地字体文件。 */
+:root {
+  --font-display: "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", serif;
+  --font-body: "Inter", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-en: "Inter", "IBM Plex Sans", sans-serif;
+  --font-en-num: "IBM Plex Sans", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  --title-weight: 600; /* gzh=600 / xhs=700 */
+}

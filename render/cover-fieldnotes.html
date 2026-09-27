@@ -5,24 +5,47 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--paper-color,#F5F4ED);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
-          color:var(--ink);
-          font-family:var(--font-display);
-          display:flex; flex-direction:column; justify-content:space-between;
-          padding:var(--safe); }
-  .num { font-family:var(--font-mono); font-size:var(--fs-6); color:var(--ink); letter-spacing:.12em;
-         border-bottom:2px solid var(--ink); padding-bottom:var(--sp-2); }
-  .body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
-          font-size:var(--fs-3); line-height:var(--lh-body); }
+  .card { position:relative; isolation:isolate; width:100%; height:100%; overflow:hidden;
+          background:var(--paper-color,#F5F4ED); color:var(--ink);
+          font-family:var(--font-display); display:flex; flex-direction:column;
+          justify-content:space-between; padding:var(--safe); }
+  .num { position:relative; z-index:2; font-family:var(--font-mono); font-size:var(--fs-6);
+         color:var(--ink-2); letter-spacing:.14em; border-bottom:1px solid var(--ink);
+         padding-bottom:var(--sp-2); }
+  .body { position:relative; z-index:1; flex:1; min-height:0; width:100%; max-width:86%;
+          display:flex; flex-direction:column; justify-content:center; gap:var(--sp-3);
+          font-size:var(--fs-1); line-height:1.22; padding:var(--sp-4) 0; }
+  .body > div:first-child { max-width:100%; }
   .hl { color:var(--accent-2); }
-  .flow { font-family:var(--font-mono); font-size:var(--fs-4); color:var(--ink); }
+  .flow { width:fit-content; max-width:100%; border-left:2px solid var(--accent);
+          padding-left:var(--sp-2); font-family:var(--font-mono); font-size:.36em;
+          line-height:1.55; color:var(--ink); }
   .flow .t1 { color:var(--ink-2); }
-  .flow .t2 { color:var(--ink); font-weight:bold; }
-  .obs { border:2px solid var(--ink); padding:var(--sp-2) var(--sp-3); width:fit-content;
-         font-family:var(--font-mono); font-size:var(--fs-6); color:var(--ink); letter-spacing:.14em; }
+  .flow .t2 { color:var(--ink); font-weight:700; }
+  .obs { position:relative; z-index:2; width:fit-content; max-width:100%;
+         border:1px solid var(--ink); padding:10px 14px; background:var(--paper-color,#F5F4ED);
+         font-family:var(--font-mono); font-size:var(--fs-6); color:var(--ink);
+         letter-spacing:.08em; }
+  .art { position:absolute; z-index:0; right:7%; top:20%; width:31%; height:66%;
+         color:var(--ink-2); opacity:.78; pointer-events:none; }
+  .art .accent { stroke:var(--accent); }
+  @media (min-aspect-ratio: 2/1) {
+    .body { width:61%; max-width:61%; font-size:calc(var(--fs-2) * .94); line-height:1.1; gap:var(--sp-2); padding:0; }
+    .flow { font-size:.34em; margin-top:0; line-height:1.3; }
+    .obs { position:absolute; right:var(--safe); bottom:var(--safe); max-width:32%; font-size:16px; }
+    .art { top:15%; height:55%; }
+  }
+  @media (min-aspect-ratio: 95/100) and (max-aspect-ratio: 199/100) {
+    .body { max-width:82%; font-size:var(--fs-2); padding:var(--sp-4) 0; }
+    .art { right:6%; top:auto; bottom:16%; width:42%; height:36%; opacity:.42; }
+  }
+  @media (max-aspect-ratio: 95/100) {
+    .card { padding:40px; }
+    .body { max-width:100%; font-size:var(--fs-3); justify-content:flex-start; padding:36px 0; }
+    .flow { font-size:.43em; margin-top:10px; }
+    .obs { font-size:14px; }
+    .art { right:5%; top:auto; bottom:13%; width:55%; height:32%; opacity:.28; }
+  }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">
@@ -38,6 +61,19 @@
       <div class="flow"><span class="t1">Chatbot</span> → 回答问题<br><span class="t2">Agent</span> → 自己决定下一步</div>
     </div>
     <div class="obs">[ OBSERVATION ]</div>
+    <svg class="art" viewBox="0 0 360 320" fill="none" aria-hidden="true">
+      <circle cx="186" cy="160" r="104" stroke="currentColor" stroke-width="1.5" />
+      <circle cx="186" cy="160" r="68" stroke="currentColor" stroke-width="1" stroke-dasharray="4 7" />
+      <path d="M186 56v208M82 160h208M112 86l148 148M260 86 112 234" stroke="currentColor" stroke-width="1" />
+      <path class="accent" d="M186 160 283 105M186 160 127 252" stroke-width="2" />
+      <circle cx="186" cy="160" r="16" fill="var(--paper-color,#F5F4ED)" stroke="var(--accent)" stroke-width="2" />
+      <circle cx="283" cy="105" r="5" fill="var(--accent)" />
+      <circle cx="127" cy="252" r="5" fill="var(--accent)" />
+      <circle cx="112" cy="86" r="4" fill="var(--ink-2)" />
+      <circle cx="260" cy="234" r="4" fill="var(--ink-2)" />
+      <path d="M157 138h58v44h-58zM157 138l29 21 29-21" stroke="currentColor" stroke-width="1.5" />
+      <path d="M157 138v44l29-20 29 20v-44" stroke="currentColor" stroke-width="1.5" />
+    </svg>
   </div>
 <script src="_fit.js"></script>
 </body>

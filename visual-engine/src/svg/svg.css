@@ -1,0 +1,13 @@
+/* 结构图独立页：纯色纸底 + 居中 SVG 线稿（大留白） */
+.structure-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper-color, #F5F4ED);
+  overflow: hidden;
+}
+.structure-root svg {
+  display: block;
+  max-width: 92%;
+  max-height: 92%;
+}

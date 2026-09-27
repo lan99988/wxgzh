@@ -5,19 +5,32 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { width:100%; height:100%; overflow:hidden; }
-  .card { width:100%; height:100%;
-          background-color:var(--paper-color,#F5F4ED);
-          background-image:var(--paper);
-          background-position:center; background-size:cover; background-repeat:no-repeat;
-          color:var(--ink);
-          font-family:var(--font-display);
-          display:flex; flex-direction:column; justify-content:space-between;
-          padding:var(--safe); }
-  .issue { align-self:flex-end; text-align:right;
-           font-family:var(--font-en-num); font-size:var(--fs-6); color:var(--ink-2); line-height:var(--lh-cap); letter-spacing:.12em; }
-  .title { flex:1; display:flex; flex-direction:column; justify-content:center;
-           font-size:var(--fs-2); line-height:1.1; font-weight:var(--title-weight); letter-spacing:.01em; }
-  .foot { font-family:var(--font-en); font-size:var(--fs-6); color:var(--ink-2); letter-spacing:.14em; }
+  .card { position:relative; isolation:isolate; width:100%; height:100%; overflow:hidden;
+          background:var(--paper-color,#F5F4ED); color:var(--ink); font-family:var(--font-display);
+          display:flex; flex-direction:column; justify-content:space-between; padding:var(--safe); }
+  .issue { position:relative; z-index:2; align-self:flex-end; text-align:right; padding-bottom:var(--sp-2);
+           border-bottom:1px solid var(--ink); font-family:var(--font-en-num); font-size:var(--fs-6);
+           color:var(--ink-2); line-height:var(--lh-cap); letter-spacing:.14em; }
+  .title { position:relative; z-index:1; flex:1; display:flex; flex-direction:column; justify-content:center;
+           max-width:82%; font-size:var(--fs-1); line-height:1.12; font-weight:var(--title-weight); letter-spacing:.01em; }
+  .foot { position:relative; z-index:2; font-family:var(--font-en); font-size:var(--fs-6);
+          color:var(--ink-2); letter-spacing:.14em; }
+  .art { position:absolute; z-index:0; right:5%; top:23%; width:36%; height:58%;
+         color:var(--ink-2); opacity:.72; pointer-events:none; }
+  .art .accent { stroke:var(--accent); }
+  @media (min-aspect-ratio: 95/100) and (max-aspect-ratio: 199/100) {
+    .title { max-width:82%; font-size:var(--fs-2); }
+    .art { right:6%; top:auto; bottom:12%; width:42%; height:38%; opacity:.38; }
+  }
+  @media (max-aspect-ratio: 95/100) {
+    .card { padding:40px; }
+    .title { max-width:100%; font-size:var(--fs-3); }
+    .art { right:4%; top:auto; bottom:12%; width:52%; height:34%; opacity:.28; }
+  }
+  @media (min-aspect-ratio: 2/1) {
+    .title { max-width:64%; font-size:var(--fs-1); }
+    .art { right:7%; top:18%; width:31%; height:66%; opacity:.82; }
+  }
 </style>
 <link rel="stylesheet" href="_tokens.css">
 <link rel="stylesheet" href="_grid.css">
@@ -30,6 +43,17 @@
     <div class="issue">THE AI ISSUE<br>08 / 2026</div>
     <div class="title" data-fit>AI 正在<br>接管<br>一部分<br>工作</div>
     <div class="foot">OPINION · TREND · 2026</div>
+    <svg class="art" viewBox="0 0 360 300" fill="none" aria-hidden="true">
+      <circle cx="180" cy="150" r="110" stroke="currentColor" stroke-width="1.5" />
+      <circle cx="180" cy="150" r="78" stroke="currentColor" stroke-width="1" stroke-dasharray="3 7" />
+      <path d="M180 40v220M70 150h220M102 72l156 156M258 72 102 228" stroke="currentColor" stroke-width="1" />
+      <path class="accent" d="M180 150 272 89M180 150 112 236" stroke-width="2" />
+      <circle cx="180" cy="150" r="19" fill="var(--paper-color,#F5F4ED)" stroke="var(--accent)" stroke-width="2" />
+      <circle cx="272" cy="89" r="5" fill="var(--accent)" />
+      <circle cx="112" cy="236" r="5" fill="var(--accent)" />
+      <path d="M149 130h62v44h-62zM149 130l31 22 31-22" stroke="currentColor" stroke-width="1.5" />
+      <path d="M149 130v44l31-20 31 20v-44" stroke="currentColor" stroke-width="1.5" />
+    </svg>
   </div>
 <script src="_fit.js"></script>
 </body>

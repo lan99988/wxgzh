@@ -1,0 +1,169 @@
+/* 封面移植 CSS（editorial / fieldnotes / system / statement；research 见 research.css）
+ *
+ * ══ 各封面花纹安全区 ════════════════════════════════════
+ *  editorial:  左右圆+人头(DECOR) | SAFE中心64% | 标题max-width:62%
+ *  fieldnotes: 左人头+右雷达(DECOR) | SAFE中左60%  | body max-width:58%
+ *  system:     右人头(DECOR)+左INPUT(CAUTION) | SAFE中左66% | title max-width:64%
+ * ══════════════════════════════════════════════════════════
+ */
+
+/* ---------- cover-editorial ---------- */
+.cover-editorial .issue {
+  align-self: flex-start;
+  text-align: left;
+  font-family: var(--font-en-num);
+  font-size: 1.7vh;
+  color: var(--accent);
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  border-bottom: 0.18vh solid var(--accent);
+  padding-bottom: 0.8vh;
+}
+.cover-editorial .title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 11.5vh;
+  line-height: 1.1;
+  font-weight: var(--title-weight);
+  letter-spacing: 0.01em;
+  max-width: 62%; /* 留出右侧线稿视觉区，标题仍有足够断行宽度 */
+  text-wrap: balance;
+}
+.cover-editorial .foot {
+  font-family: var(--font-en);
+  font-size: 1.7vh;
+  color: var(--ink-2);
+  letter-spacing: 0.14em;
+  max-width: 62%;
+}
+@media (min-aspect-ratio: 2/1) {
+  .cover-editorial { align-items: flex-start; text-align: left; }
+  .cover-editorial .title { font-size: 17vh; align-items: flex-start; max-width: 65%; }
+  .cover-editorial .issue { font-size: 3vh; align-self: flex-start; text-align: left; }
+  .cover-editorial .foot { font-size: 2.8vh; }
+  .cover-editorial .editorial-motif { top: 14%; right: 6%; width: 22%; height: 72%; }
+}
+
+/* ---------- cover-fieldnotes ---------- */
+.cover-fieldnotes .num {
+  font-family: var(--font-mono);
+  font-size: 2vh;
+  color: var(--ink);
+  letter-spacing: 0.12em;
+  border-bottom: 0.2vh solid var(--ink);
+  padding-bottom: 1.2vh;
+}
+.cover-fieldnotes .body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 主标题靠上；副标题用 margin-top:auto 沉底 */
+  gap: 1.8vh;
+  font-size: 4.5vh; /* 主标题放大一点（原 4vh）：多字封面主标题更突出 */
+  line-height: 1.7;
+  width: 66%;
+  max-width: 66%; /* 正文保持超过画布55%的可用列宽 */
+  padding-left: 0;
+}
+.cover-fieldnotes .hl { color: var(--accent-2); }
+.cover-fieldnotes .flow {
+  margin-top: auto; /* 副标题沉到内容区底端（用户约定：小标题放小放长放底端） */
+  font-family: var(--font-mono);
+  font-size: 3.2vh; /* 比主标题明显小（横版另降到4.5vh） */
+  line-height: 1.5;
+  color: var(--ink);
+}
+.cover-fieldnotes .flow .t1 { color: var(--ink-2); }
+.cover-fieldnotes .flow .t2 { color: var(--ink); font-weight: bold; }
+.cover-fieldnotes .obs {
+  border: 0.25vh solid var(--ink);
+  padding: 2vh 3vw;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 1.8vh;
+  color: var(--ink);
+  letter-spacing: 0.14em;
+}
+@media (min-aspect-ratio: 2/1) {
+  .cover-fieldnotes .body { font-size: 6.5vh; width: 58%; max-width: 58%; }
+  .cover-fieldnotes .flow { font-size: 3.2vh; }
+  .cover-fieldnotes .num { font-size: 4vh; }
+  .cover-fieldnotes .obs { font-size: 3.6vh; margin: 0 auto; }
+  .cover-fieldnotes .editorial-motif { top: 14%; right: 6%; width: 21%; height: 70%; }
+}
+
+@media (min-aspect-ratio: 4/5) and (max-aspect-ratio: 5/4) {
+  .cover-fieldnotes .body { width: 64%; max-width: 64%; font-size: 5.8vh; }
+  .cover-fieldnotes .flow { font-size: 3vh; }
+  .cover-fieldnotes .editorial-motif { top: 18%; right: 5%; width: 24%; height: 62%; }
+}
+
+/* ---------- cover-system（深色终端风） ---------- */
+.cover-system.card {
+  background-color: var(--bg-dark);
+  font-family: var(--font-mono);
+}
+.cover-system .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-en-num);
+  font-size: 1.9vh;
+  color: var(--term-gray);
+  letter-spacing: 0.12em;
+}
+.cover-system .title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 10.5vh;
+  line-height: 1.15;
+  font-weight: bold;
+  color: var(--ink);
+  max-width: 64%; /* 安全区：不侵入右侧人头轮廓 */
+}
+.cover-system .io {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8vh;
+  font-size: 2.4vh;
+  line-height: 1.55;
+}
+.cover-system .io .lab { color: var(--term-green); letter-spacing: 0.16em; }
+.cover-system .io .in { color: var(--term-gray); }
+.cover-system .io .out { color: var(--ink); }
+.cover-system .arrow { color: var(--term-green); }
+@media (min-aspect-ratio: 2/1) {
+  .cover-system .title { font-size: 19vh; align-items: center; text-align: center; } /* ↓ 从22vh降到19vh */
+  .cover-system .top { font-size: 4vh; }
+  .cover-system .io { font-size: 4.8vh; }
+}
+
+/* ---------- cover-statement ---------- */
+.cover-statement .stmt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5vh; /* ↓ 从2.6vh缩小：多行文字省空间 */
+  font-size: 8.5vh;
+  line-height: 1.25; /* ↓ 从1.3收紧 */
+  font-weight: var(--title-weight);
+  max-width: 62%; /* 安全区：不侵入左右圆+节点装饰 */
+  overflow: hidden; /* 防止多行文字溢出画面 */
+}
+.cover-statement .foot {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-en-num);
+  font-size: 1.6vh;
+  color: var(--ink-2);
+  letter-spacing: 0.14em;
+}
+@media (min-aspect-ratio: 2/1) {
+  .cover-statement .stmt { font-size: 9.5vh; align-items: center; text-align: center; } /* ↓ 最终值：9.5×1.25×6=71.25vh + 5×1.5=7.5vh = 78.75vh ≪ 100vh */
+  .cover-statement .foot { font-size: 3.6vh; }
+}

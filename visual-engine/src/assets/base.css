@@ -1,0 +1,22 @@
+/* 基础样式：reset + .card 公共结构（移植自 render 模板公共部分） */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; }
+body { background: transparent; }
+
+/* 渲染根：整页为卡片、无滚动条 */
+.render-root { width: 100%; height: 100%; overflow: hidden; }
+
+/* .card 公共骨架（模板专属样式在各组件 css 中） */
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--paper-color, #F5F4ED);
+  background-image: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6vh 7vw; /* 默认 medium；density 覆盖 */
+  overflow: hidden;
+}
