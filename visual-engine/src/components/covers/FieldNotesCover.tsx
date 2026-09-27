@@ -1,4 +1,5 @@
 import { useAutoFit } from '../../hooks/useAutoFit'
+import { TextLines } from '../Lines'
 import { EditorialMotif } from '../EditorialMotif'
 import './covers.css'
 
@@ -17,12 +18,12 @@ export function FieldNotesCover({ num, body, flow, obs }: FieldNotesCoverProps) 
   const obsRef = useAutoFit<HTMLDivElement>({ field: 'cover-fieldnotes.obs' })
   return (
     <div className="card cover-fieldnotes">
-      <div className="num" ref={numRef}>{num ?? ''}</div>
+      <div className="num" ref={numRef}><TextLines text={num ?? ''} /></div>
       <div className="body" ref={bodyRef}>
         <div dangerouslySetInnerHTML={{ __html: body ?? '' }} />
         {flow && <div className="flow" ref={flowRef} dangerouslySetInnerHTML={{ __html: flow }} />}
       </div>
-      <div className="obs" ref={obsRef}>{obs ?? ''}</div>
+      <div className="obs" ref={obsRef}><TextLines text={obs ?? ''} /></div>
       <EditorialMotif kind="flow" />
     </div>
   )

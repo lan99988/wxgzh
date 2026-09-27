@@ -1,6 +1,6 @@
 import { useAutoFit } from '../../hooks/useAutoFit'
 import { EditorialMotif } from '../EditorialMotif'
-import { Lines } from '../Lines'
+import { Lines, TextLines } from '../Lines'
 import './cards.css'
 
 export interface DefinitionCardProps {
@@ -19,15 +19,15 @@ export function DefinitionCard({ no, en, title, sum }: DefinitionCardProps) {
   return (
     <div className="card card-definition">
       <div className="head">
-        <span className="no" ref={noRef}>{no ?? ''}</span>
-        <span className="en" ref={enRef}>{en ?? ''}</span>
+        <span className="no" ref={noRef}><TextLines text={no ?? ''} /></span>
+        <span className="en" ref={enRef}><TextLines text={en ?? ''} /></span>
       </div>
       <div className="body">
         <div className="title" ref={titleRef}>
           <Lines text={title} />
         </div>
         <hr className="rule" />
-        <div className="sum" ref={sumRef}>{sum ?? ''}</div>
+        <div className="sum" ref={sumRef}><TextLines text={sum ?? ''} /></div>
       </div>
       <EditorialMotif kind="definition" />
     </div>

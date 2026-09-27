@@ -1,6 +1,7 @@
 // ResearchCover — cover-research（可编辑版：优先从 VisualSpec.style 注入排版/布局/SVG，兼容旧 props）
 import { useAutoFit } from '../../hooks/useAutoFit'
 import type { PaletteName, Platform, VisualSpec } from '../../lib/types'
+import { Lines, TextLines } from '../Lines'
 import './research.css'
 
 export interface ResearchCoverProps {
@@ -18,8 +19,6 @@ export interface ResearchCoverProps {
 export function ResearchCover({ num, title, sub, meta, palette, platform, padding, spec }: ResearchCoverProps) {
   const titleRef = useAutoFit<HTMLDivElement>({ field: 'cover-research.title' })
   const subRef = useAutoFit<HTMLDivElement>({ field: 'cover-research.subtitle' })
-  const lines = (title ?? '').split('\n')
-
   // 从 spec 解析可编辑排版（缺省回退到 props/CSS）
   const tTitle = spec?.style?.typography?.title
   const tSub = spec?.style?.typography?.subtitle
@@ -57,20 +56,15 @@ export function ResearchCover({ num, title, sub, meta, palette, platform, paddin
   return (
     <div className="card cover-research" style={rootStyle}>
       <div className="meta" style={metaStyle}>
-        <span>{content?.num ?? num ?? ''}</span>
-        <span>{content?.meta ?? meta ?? ''}</span>
+        <span><TextLines text={content?.num ?? num ?? ''} /></span>
+        <span><TextLines text={content?.meta ?? meta ?? ''} /></span>
       </div>
       <div className="body" style={bodyStyle}>
         <div className="title" ref={titleRef} style={titleStyle}>
-          {lines.map((l, i) => (
-            <span key={i}>
-              {l}
-              {i < lines.length - 1 && <br />}
-            </span>
-          ))}
+          <Lines text={title} />
         </div>
         <hr className="rule" />
-        <div className="sub" ref={subRef} style={subStyle}>{content?.subtitle ?? sub ?? ''}</div>
+        <div className="sub" ref={subRef} style={subStyle}><TextLines text={content?.subtitle ?? sub ?? ''} /></div>
       </div>
     </div>
   )

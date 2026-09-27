@@ -1,6 +1,6 @@
 // 多行文本渲染：\n → <br>（复刻 render_batch.py 的 lines 语义）
-export function Lines({ text }: { text: string }) {
-  const parts = text.split('\n')
+export function TextLines({ text }: { text: string }) {
+  const parts = text.split(/\r\n?|\n/)
   return (
     <>
       {parts.map((p, i) => (
@@ -12,3 +12,5 @@ export function Lines({ text }: { text: string }) {
     </>
   )
 }
+
+export const Lines = TextLines

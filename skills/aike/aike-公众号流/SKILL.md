@@ -14,11 +14,14 @@ AI 科普公众号的批量双平台生产工作流（公众号 + 小红书）�
 |---|---|
 | 渲染模板 | 项目根目录 `render/` |
 | 配色 Skill | 项目根目录 `风格/` |
+| 网页截图运行时 | 仓库 `visual-engine/`；两种批量渲染入口共用 |
 | Markdown 转微信 HTML | 安装兼容转换工具；用 `WECHAT_HTML_CONVERTER` 指定脚本 |
 | 皮肤与图卡脚本 | `skills/aike/aike-皮肤注入/scripts/` 与本 Skill 的 `scripts/` |
 | 发布工具 | 使用者配置的微信发布 Skill；凭证仅保存在本地 |
 
-Python 需要 Pillow；排版转换需要 Node.js；截图需要 Chrome/Chromium。脚本从当前仓库结构定位项目根目录，必要时可通过环境变量覆盖本机命令路径。
+两种网页渲染入口都依赖 Node.js 18.18+、`visual-engine/` 中的 tsx/Playwright 与 Chromium；开始渲染前在该目录运行 `npm ci` 和 `npx playwright install chromium`。旧 HTML 批量脚本另需 Python 3 与 Pillow；排版转换需要兼容的 Markdown 转微信 HTML 工具。脚本从当前仓库结构定位项目根目录，必要时可通过环境变量覆盖本机命令路径。
+
+**Skill 路径要求：** 从仓库中的 `skills/aike/aike-公众号流/SKILL.md` 加载本 Skill，并在仓库根目录执行下方命令。若 Agent 需要个人 Skills 目录才能发现 Skill，请对仓库内的 Skill 文件夹创建软链接；不要复制或移动 `scripts/`，否则脚本无法按仓库结构找到 `render/` 与 `风格/`。
 
 ## 1. 批次目录规范（统一批次制，2026-08-20 起）
 

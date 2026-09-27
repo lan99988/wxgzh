@@ -1,5 +1,6 @@
 import { useAutoFit } from '../../hooks/useAutoFit'
 import { EditorialMotif } from '../EditorialMotif'
+import { TextLines } from '../Lines'
 import './cards.css'
 
 export interface FrameworkCardProps {
@@ -15,11 +16,11 @@ export function FrameworkCard({ name, items, sum }: FrameworkCardProps) {
   const sumRef = useAutoFit<HTMLDivElement>({ field: 'card-framework.sum' })
   return (
     <div className="card card-framework">
-      <div className="name" ref={nameRef}>{name ?? ''}</div>
+      <div className="name" ref={nameRef}><TextLines text={name ?? ''} /></div>
       <div className="items" ref={itemsRef} dangerouslySetInnerHTML={{ __html: items ?? '' }} />
       <div>
         <hr className="rule" />
-        <div className="sum" ref={sumRef}>{sum ?? ''}</div>
+        <div className="sum" ref={sumRef}><TextLines text={sum ?? ''} /></div>
       </div>
       <EditorialMotif kind="framework" />
     </div>

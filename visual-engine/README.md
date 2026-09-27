@@ -4,7 +4,7 @@
 
 ## 安装
 
-需要 Node.js 18+ 与 Python 3。首次使用：
+需要 Node.js 18.18+ 与 Python 3。首次使用：
 
 ```bash
 npm ci

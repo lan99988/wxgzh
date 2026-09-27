@@ -4,26 +4,19 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { renderJobToPng, disposeRenderPipeline } from '../server/renderPipeline'
 import { resolveVisualJob, type NamedJob } from '../src/lib/resolveVisual'
-import type { ResolvedJob, VisualJob } from '../src/lib/types'
-
-function parseArgs(argv: string[]) {
-  const args: Record<string, string> = {}
-  for (let i = 0; i < argv.length; i++) {
-    if (argv[i].startsWith('--')) args[argv[i].slice(2)] = argv[i + 1]
-  }
-  return args
-}
+import { parseRenderArgs } from '../src/lib/renderArgs'
+import type { VisualJob } from '../src/lib/types'
 
 async function main() {
-  const args = parseArgs(process.argv.slice(2))
+  const args = parseRenderArgs(process.argv.slice(2))
   if (!args.job || !args.out) {
     console.error('用法: tsx scripts/render.ts --job <file> --out <dir> [--size cover|card|1x1] [--rebuild]')
     process.exit(1)
   }
   const jobFile = resolve(args.job)
   const outDir = resolve(args.out)
-  const sizeFilter = args.size as 'cover' | 'card' | '1x1' | undefined
-  const rebuild = args.rebuild === '1'
+  const sizeFilter = args.size
+  const rebuild = args.rebuild
 
   const raw = JSON.parse(readFileSync(jobFile, 'utf-8')) as VisualJob
   const named: NamedJob[] = resolveVisualJob(raw).filter((n) => !sizeFilter || n.job.kind === sizeFilter)

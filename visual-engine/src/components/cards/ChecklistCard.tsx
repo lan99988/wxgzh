@@ -1,5 +1,6 @@
 import { useAutoFit } from '../../hooks/useAutoFit'
 import { EditorialMotif } from '../EditorialMotif'
+import { TextLines } from '../Lines'
 import './cards.css'
 
 export interface ChecklistCardProps {
@@ -15,9 +16,9 @@ export function ChecklistCard({ title, items, tip }: ChecklistCardProps) {
   const tipRef = useAutoFit<HTMLDivElement>({ field: 'card-checklist.tip' })
   return (
     <div className="card card-checklist">
-      <div className="title" ref={titleRef}>{title ?? ''}</div>
+      <div className="title" ref={titleRef}><TextLines text={title ?? ''} /></div>
       <div className="items" ref={itemsRef} dangerouslySetInnerHTML={{ __html: items ?? '' }} />
-      <div className="tip" ref={tipRef}>{tip ?? ''}</div>
+      <div className="tip" ref={tipRef}><TextLines text={tip ?? ''} /></div>
       <EditorialMotif kind="checklist" />
     </div>
   )
